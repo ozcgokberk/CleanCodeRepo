@@ -87,3 +87,75 @@ Avoid using boolean variables as function arguments. Using booleans with other a
 - Use as warning of consequences.
 
 - Chapter 5 Formatting:
+Divide ideas vertically.
+Vertically dense related code should be shown.
+Declare variables near where they will be used.
+Dependent functions ought to be near together.
+Similar functions ought to be nearby.
+Maintain short lines.
+Use vertical alignment only.
+To correlate objects that are related and to dissociate weakly related ones, use white space.
+Keep the indentation intact.
+
+Chapter 6: Objects and data structures
+Cover internal organization.
+preferred data structures
+Avoid hybrid building types (half object and half data).
+Should be modest.
+Make one move.
+only a few instance variables.
+The base class shouldn't be aware of its derivatives.
+It is preferable to have numerous functions than to pass a function a piece of code to choose a behavior.
+Choose non-static methods over static ones.
+
+Chapter 7: Error Handling
+The business logic shouldn't be obscured by error handling.
+Every method between the throwing method and the handling method must declare checked exceptions as violating the Open/Closed Principle.
+Chapter 8: Boundries:
+
+Use "learning tests" to test out third-party code before integrating it into your
+codebase. Integration of third-party code should be covered by "boundary tests" so 
+that we know if a new version of the library will work as expected. Third-party code 
+should be wrapped so as to not expose its externals to your system.
+Chapter 9:Test
+dirty tests are worse than no tests - they will reduce understanding and take more time to change than the production code
+test code must be made to read
+a good test follows the FIRST rules:
+-fast
+-independent
+-reliable
+-self-validating
+-timely
+
+Chapter 10: Classes
+a class should have a single reason to change
+“A system with many small classes has no more moving parts than a system with a few large classes.”
+classes are maximally cohesive if every method manipulates or accesses each instance variable
+if a class loses cohesion, split it
+
+Chapter 11 : Systems
+Obey the Separation of Concerns principle. Never let convenient idioms lead to
+modularity breakdown, e.g. by hard-coding dependencies; the startup process is a 
+major concern. Use factories and Dependency Injection (DI), which applies the
+Inversion of Control (IoC) principle: Delegate the creation of dependencies to
+objects that are specialized to that task (either explicitly or, preferably, via 
+suitable constructor parameters or setter methods). This also supports the Single
+Responsibility Principle.
+
+Chapter 12:
+Simple design rule 1: Runs All the test
+First and foremost, a design must produce a system that acts as intended. A system might
+have a perfect design on paper, but if there is no simple way to verify that the system actually works as intended, then all the paper effort is questionable.
+A system that is comprehensively tested and passes all of its tests all of the time is a testable system. That’s an obvious statement, but an important one. Systems that aren’t testable aren’t verifiable. Arguably,
+a system that cannot be verified should never be deployed.
+Fortunately, making our systems testable pushes us toward a design where our classes are small and single purpose. It’s just easier to test classes that conform to the SRP. 
+Refactoring :
+We can increase cohesion, decrease coupling, separate concerns, modularize system concerns, shrink our functions and classes, choose better names,
+and so on. This is also where we apply the final three rules of simple design: Eliminate
+duplication, ensure expressiveness, and minimize the number of classes and methods.
+No Duplication: 
+Duplication is the primary enemy of a well-designed system. It represents additional
+work, additional risk, and additional unnecessary complexity
+To keep this system clean, we should eliminate  the duplication
+refactor to separate responsibilities
+take pride in workmanship to improve code continuously - the design will emerge
